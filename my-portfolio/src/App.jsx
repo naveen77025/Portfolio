@@ -51,24 +51,35 @@ export default function App() {
     <div className="min-h-screen bg-gradient-to-r from-blue-50 via-white to-blue-50 text-gray-900">
       {/* Navbar */}
       <header className="bg-white/80 backdrop-blur sticky top-0 shadow-md z-50">
-        <nav className="container mx-auto flex justify-between items-center py-4 px-6">
-          <h1 className="text-2xl font-bold text-blue-600">Imadabattuni Naveen Kumar</h1>
-          <ul className="flex space-x-6 font-medium">
-            {["about", "skills", "experience", "projects", "contact"].map((item) => (
-              <li key={item}>
-                <a
-                  href={`#${item}`}
-                  className={`transition ${
-                    activeSection === item ? "text-blue-600 font-semibold" : "hover:text-blue-600"
-                  }`}
-                >
-                  {item.charAt(0).toUpperCase() + item.slice(1)}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </header>
+      <nav className="container mx-auto flex flex-col md:flex-row justify-between items-center py-4 px-6">
+        {/* Brand / Name */}
+        <h1 className="text-2xl sm:text-1xl md:text-2xl lg:text-5xl font-bold text-blue-600 leading-tight text-center">
+          Imadabattuni <br className="sm:hidden" />
+          Naveen Kumar
+        </h1>
+
+
+
+        {/* Navbar Links */}
+        <ul className="flex flex-col md:flex-row gap-3 md:gap-6 font-medium text-center">
+          {["about", "skills", "experience", "projects", "contact"].map((item) => (
+            <li key={item}>
+              <a
+                href={`#${item}`}
+                className={`transition ${
+                  activeSection === item
+                    ? "text-blue-600 font-semibold"
+                    : "hover:text-blue-600"
+                }`}
+              >
+                {item.charAt(0).toUpperCase() + item.slice(1)}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </header>
+
 
       {/* Main Sections */}
       <main className="container mx-auto px-6 py-16 space-y-28">
